@@ -7,7 +7,10 @@
  * 使用方法： 
  * 
  * 1.初始化：
- * import { Validator } from "@/utils/validate.js";
+ * webpack中： import("XXX/validate.js")
+ * 浏览器中： <script src="XXX/validate.js">
+ * // import { Validator } from "XXX/validate.js"; 晚点在改成标准模块
+ * 
  * const validator = new Validator({options});
  * 2.校验
  * validator.valid(this, options, domEle, data)  
