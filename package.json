@@ -1,0 +1,24 @@
+{
+  "author": {
+    "name": "Aekley"
+  },
+  "main": "src/index.js",
+  "description": "vue validate based on directive",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "vue",
+    "validate"
+  ],
+  "license": "MIT",
+  "name": "vue-valifree",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+  },
+  "sideEffects": false,
+  "version": "0.0.1"
+}

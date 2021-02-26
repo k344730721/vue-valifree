@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./src/index.js"></script>
+  <body>
+    <div id="app">
+      <input v-model="argument.foo" v-validate:[argument.foo].required.maxlen="['姓名',{ maxlen: 4 }]">
+      </input>
+      <input v-model="argument.foo2" v-validate:[argument.foo2].required.maxlen="['手机',{ maxlen: 4 }]">
+      </input>
+      <button @click="vali">校验</button>
+    </div>
+  </body>
+  <script>
+    const validator = new Validator();
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          argument: {
+            foo: "",
+            foo2: "",
+          }
+        };
+      },
+      methods: {
+        async vali() {
+          let res = await validator.valid(this,{
+              step:false //是否 一步步的校验
+          });
+          res.length && console.log("校验通过的数据:",res);
+        }
+      }
+    });
+  </script>
+</html>
